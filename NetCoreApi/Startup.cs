@@ -52,17 +52,17 @@ namespace NetCoreApi
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.Authority = "https://sonat.eu.auth0.com/";
-                options.Audience = "https://auth.sonat.dev";
+                options.Authority = "https://xxx.eu.auth0.com/";
+                options.Audience = "https://auth.xxx.dev";
             });
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("read:employees",
                     policy => policy.Requirements.Add(new HasPermissionRequirements("read:employees",
-                        "https://sonat.eu.auth0.com/")));
+                        "https://xxx.eu.auth0.com/")));
                 options.AddPolicy("modify:employees",
                     policy => policy.Requirements.Add(new HasPermissionRequirements("modify:employees",
-                        "https://sonat.eu.auth0.com")));
+                        "https://xxx.eu.auth0.com")));
             });
             services.AddSingleton<IAuthorizationHandler, HasPermissionHandler>();
         }

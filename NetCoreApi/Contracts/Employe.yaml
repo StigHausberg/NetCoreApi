@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  description: Sonat employee api
+  description: Employee api
   version: "1.0.0"
   title: Sonat employee
 tags:
